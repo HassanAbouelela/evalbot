@@ -1,16 +1,12 @@
 name: Build
 
 on:
-  workflow_run:
-    workflows: ["Lint & Test"]
+  push:
     branches:
       - main
-    types:
-      - completed
 
 jobs:
   build:
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
     name: Build & Push
     runs-on: ubuntu-latest
 
