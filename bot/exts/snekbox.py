@@ -12,13 +12,7 @@ import discord
 from discord import HTTPException, Message, NotFound, Reaction, User
 from discord.ext.commands import Cog, Context, command, guild_only
 
-from bot import Bot, constants, hastebin
-
-# from bot.bot import Bot
-# from bot.constants import Categories, Channels, Roles, URLs
-# from bot.decorators import redirect_output
-# from bot.utils import send_to_paste_service
-# from bot.utils.messages import wait_for_deletion
+from bot import Bot, constants, hastebin, utils
 
 log = logging.getLogger(__name__)
 
@@ -281,6 +275,9 @@ class Snekbox(Cog):
 
         We've done our best to make this sandboxed, but do let us know if you manage to find an issue with it!
         """
+        if await utils.check_whitelist(ctx):
+            return
+
         if ctx.author.id in self.jobs:
             await ctx.send(
                 f"{ctx.author.mention} You've already got a job running - "
