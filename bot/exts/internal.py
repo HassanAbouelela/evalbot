@@ -70,6 +70,8 @@ async def func():  # (None,) -> Any
         except Exception:
             res = traceback.format_exc()
 
+        res = res or ""
+
         self.stdout.seek(0)
         text = self.stdout.read()
         self.stdout.close()
