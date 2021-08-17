@@ -19,8 +19,8 @@ spec:
         imagePullPolicy: Always
         resources:
           limits:
-            cpu: 150m
-            memory: 100Mi
+            cpu: 200m
+            memory: 150Mi
         envFrom:
         - secretRef:
             name: evalbot-env
