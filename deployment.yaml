@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: evalbot
+  namespace: apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: evalbot
+  template:
+    metadata:
+      labels:
+        app: evalbot
+    spec:
+      containers:
+      - name: evalbot
+        image: ghcr.io/hassanabouelela/evalbot:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 150m
+            memory: 100Mi
+        envFrom:
+        - secretRef:
+            name: evalbot-env
