@@ -26,7 +26,7 @@ else:
 bot = Bot(
     command_prefix=prefix,
     case_insensitive=True,
-    activity=Game(name=f"Python 3.10 Eval"),
+    activity=Game(name="Python 3.10 Eval"),
     allowed_mentions=AllowedMentions(everyone=False),
     intent=INTENTS,
     max_messages=1_000
@@ -35,6 +35,7 @@ bot = Bot(
 
 # Add a listener to prevent DM invocations, or invocations in non-approved channels
 async def on_message(message: discord.Message) -> None:
+    """Route incoming messages."""
     if message.author.bot:
         return
 

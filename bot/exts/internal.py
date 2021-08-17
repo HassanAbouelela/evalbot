@@ -33,7 +33,6 @@ class Internal(Cog):
 
     async def _eval(self, ctx: Context, code: str) -> Optional[discord.Message]:
         """Eval the input code string & send an embed to the invoking context."""
-
         env = {
             "message": ctx.message,
             "author": ctx.message.author,

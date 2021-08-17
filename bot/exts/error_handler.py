@@ -54,7 +54,7 @@ class ErrorHandler(Cog):
             return
 
         if isinstance(e, errors.CommandNotFound):
-            await ctx.send(f"Command not found. Try the help command.")
+            await ctx.send("Command not found. Try the help command.")
             return
         elif isinstance(e, errors.UserInputError):
             await self.handle_user_input_error(ctx, e)
