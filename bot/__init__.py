@@ -20,3 +20,4 @@ class Bot(commands.Bot):
         """The destructor for the bot. Just calls the default discord stuff, then closes our custom eval_session."""
         await super().close()
         await self.eval_session.close()
+        print("Hah")
