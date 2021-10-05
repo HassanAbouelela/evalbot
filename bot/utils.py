@@ -7,7 +7,7 @@ from bot import constants
 log = logging.getLogger(__name__)
 
 # Set up a string of channel mentions for the error message.
-__CHANNELS = "<#894952103863263282>, Topical Channels, Help Channels, Voice Channels, Off-Topic Channels"
+__CHANNELS = "<#267659945086812160>, Topical Channels, Help Channels, Voice Channels, Off-Topic Channels"
 CHANNEL_ERROR_MESSAGE = f"You can only use this command in the following channel(s): {__CHANNELS}"
 
 
